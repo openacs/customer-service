@@ -44,7 +44,7 @@
 -- 
 -- -- puts date_added into eccs_user_identification if it's missing
 -- create function eccs_user_identificate_date_tr ()
--- returns opaque as '
+-- returns trigger as '
 -- begin
 --         IF new.date_added is null THEN
 --                 new.date_added := now();
@@ -74,7 +74,7 @@
 -- 
 -- -- gilbertw - used the code in OpenACS 3.2.5 as a reference
 -- create function eccs_cs_interaction_inserts ()
--- returns opaque as '
+-- returns trigger as '
 -- begin
 --  IF new.interaction_date is null THEN 
 --     new.interaction_date := now();
@@ -123,7 +123,7 @@
 -- -- gilbertw - used code OpenACS 3.2.5 as a reference
 -- -- removed INSERTING
 -- create function eccs_cs_issue_inserts ()
--- returns opaque as '
+-- returns trigger as '
 -- begin
 --  IF new.open_date is null THEN 
 --     new.open_date := now();
@@ -183,7 +183,7 @@
 -- );
 -- 
 -- create function eccs_picklist_items_audit_tr ()
--- returns opaque as '
+-- returns trigger as '
 -- begin
 --         insert into eccs_picklist_items_audit (
 --         picklist_item_id, picklist_item,
@@ -257,7 +257,7 @@
 -- );
 -- 
 -- create function eccs_email_templates_audit_tr ()
--- returns opaque as '
+-- returns trigger as '
 -- begin
 --         insert into eccs_email_templates_audit (
 --         email_template_id, title,
